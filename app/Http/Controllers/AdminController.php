@@ -67,7 +67,7 @@ class AdminController extends Controller
             'message' => 'Credentials updated successfully',
             'alert-type' => 'success',
         ];
-
+        //dd('here');
         return redirect('admin/profile')->with($notification);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -16,10 +16,14 @@ use App\Http\Controllers\AgentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//frontend route
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
+
+//backend route
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

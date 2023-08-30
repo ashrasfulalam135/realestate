@@ -28,7 +28,7 @@
                     </li>
                 </ul>
                 <div class="sign-box">
-                    <a href="signin.html"><i class="fas fa-user"></i>Sign In</a>
+                    <a href="{{ route('login') }}"><i class="fas fa-user"></i>Sign In</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="main-box">
                 <div class="logo-box">
                     <figure class="logo">
-                        <a href="index.html"><img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" /></a>
+                        <a href="{{ route('homepage') }}"><img src="{{ asset('frontend/assets/images/logo.png') }}" alt="" /></a>
                     </figure>
                 </div>
                 <div class="menu-area clearfix">

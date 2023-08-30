@@ -17,9 +17,6 @@ use App\Http\Controllers\AgentController;
 */
 
 //frontend route
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 

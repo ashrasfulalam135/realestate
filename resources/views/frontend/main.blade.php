@@ -32,7 +32,7 @@
 	<body>
 		<div class="boxed_wrapper">
 			<!-- preloader -->
-			@include('frontend.components.preloader')
+			<!-- @include('frontend.components.preloader') -->
 			<!-- preloader end -->
 
 			<!-- switcher menu -->

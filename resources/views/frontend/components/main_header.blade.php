@@ -28,7 +28,11 @@
                     </li>
                 </ul>
                 <div class="sign-box">
-                    <a href="{{ route('login') }}"><i class="fas fa-user"></i>Sign In</a>
+                    @if($loggedin)
+                        <a href="{{ route('user.logout') }}"><i class="far fa-sign-out"></i>Logout</a>
+                    @else
+                        <a href="{{ route('login') }}"><i class="fas fa-user"></i>Sign In</a>
+                    @endif
                 </div>
             </div>
         </div>

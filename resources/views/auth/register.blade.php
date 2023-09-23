@@ -82,30 +82,30 @@
 
 @section('frontend_js')
     @parent
-      <script type="text/javascript">
-        $(document).ready(function(){
-            if($('#register-form').length){
-                $('#register-form').validate({
-                    rules: {
-                        name: {
-                            required: true
-                        },
-                        email: {
-                            required: true,
-                            email: true
-                        },
-                        password: {
-                            required: true,
-                            minlength:8
-                        },
-                        password_confirmation: {
-                            required: true,
-                            minlength:8,
-                            equalTo:'#password'
+        <script type="text/javascript">
+            $(document).ready(function(){
+                if($('#register-form').length){
+                    $('#register-form').validate({
+                        rules: {
+                            name: {
+                                required: true
+                            },
+                            email: {
+                                required: true,
+                                email: true
+                            },
+                            password: {
+                                required: true,
+                                minlength:8
+                            },
+                            password_confirmation: {
+                                required: true,
+                                minlength:8,
+                                equalTo:'#password'
+                            }
                         }
-                    }
-                });
-            }
-        })
-      </script>
+                    });
+                }
+            })
+        </script>
 @endsection

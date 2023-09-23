@@ -26,6 +26,10 @@
 		<link href="{{ asset('frontend/assets/css/switcher-style.css') }}" rel="stylesheet" />
 		<link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet" />
 		<link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet" />
+
+		<!-- toastr css for this page -->
+		<link rel="stylesheet" href="{{ asset('backend/assets/vendors/toastr/toastr.min.css') }}" />
+		<!-- toastr css for this page -->
 	</head>
 
 	<!-- page wrapper -->
@@ -75,9 +79,41 @@
 		<script src="{{ asset('frontend/assets/js/jQuery.style.switcher.min.js') }}"></script>
 		<script src="{{ asset('frontend/assets/js/jquery-ui.js') }}"></script>
 		<script src="{{ asset('frontend/assets/js/nav-tool.js') }}"></script>
+		
 
 		<!-- main-js -->
 		<script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+
+		<!-- toastr js for this page -->
+		<script src="{{ asset('backend/assets/vendors/toastr/toastr.min.js') }}"></script>
+		<!-- toastr js for this page -->
+
+		<script>
+			@if(Session::has('message'))
+			var type = "{{ Session::get('alert-type','info') }}"
+			toastr.options = {
+				"progressBar": true,
+				"positionClass": "toast-bottom-right",
+			}
+			switch(type){
+				case 'info':
+				toastr.info(" {{ Session::get('message') }} ");
+				break;
+
+				case 'success':
+				toastr.success(" {{ Session::get('message') }} ");
+				break;
+
+				case 'warning':
+				toastr.warning(" {{ Session::get('message') }} ");
+				break;
+
+				case 'error':
+				toastr.error(" {{ Session::get('message') }} ");
+				break; 
+			}
+			@endif 
+		</script>
         @show
 	</body>
 	<!-- End of .page_wrapper -->
